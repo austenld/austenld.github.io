@@ -2,7 +2,9 @@
 layout: post
 title: Introduction IMS Theory
 ---
+//http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/
 
+//http://dasonk.com/blog/2012/10/09/Using-Jekyll-and-Mathjax
 ### IMS Theory Introduction
 1. Establish Variables
 
