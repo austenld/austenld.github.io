@@ -1,7 +1,7 @@
 ---
 layout: post
-title: You're up and running!
+title: Blog Up and Running
 ---
 
 Hello World!
-![_config.yml]({{ site.baseurl }}/images/config.png)
+//![_config.yml]({{ site.baseurl }}/images/config.png)
