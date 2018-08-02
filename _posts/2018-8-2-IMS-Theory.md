@@ -16,11 +16,11 @@ First, we need to establish the variables which will be discussed in further det
 $$L$$ is the length of the drift space and $$V$$ is the voltage drop across the drift space.
 The electric field is such that $$E=\dfrac{V}{L}$$.
 $$N$$ is the number density of the drift gas and if the drift gas is ideal then $$N=N_0\cdot \dfrac{P\cdot T_0}{P_0\cdot T}$$.
-Where $$T_0=273.15K, P_0= 760\;\text{torr, and}  N_0=2.687\cdot10^{19} \text{cm}^3$$ (the number density of an ideal gas at STP.
+Where $$T_0=273.15$$K, $$P_0= 760\;$$torr, and  $$N_0=2.687\cdot10^{19} \text{cm}^3$$ (the number density of an ideal gas at STP).
 
 #### Mass Parameters: $$(m, M,q=Ze)$$:
 
-$$m$$ and $$M$$ correspond to the ion and drift gas masses respectively and $q$ corresponds to the charge of the ion.
+$$m$$ and $$M$$ correspond to the ion and drift gas masses respectively and $$q$$ corresponds to the charge of the ion.
 
 #### Measured Quantity: $$(t_d, v_d)$$:
 
@@ -37,18 +37,32 @@ $$K=\dfrac{v_d}{E}$$
 
 ### Five Underlying Assumptions
 1. $$n << N$$: Ions have a much lower number density then neutrals.
-    1. Mutual coulombic repulsion of ions unimportant
-	2. Ion-ion collisions unimpportant
-	3. Each neutral encounters 0 ions or 1 ion during a mobility experiment.
-2. Collisions are instantaneous
+    1. Mutual coulombic repulsion of ions unimportant.
+	2. Ion-ion collisions unimpportant.
+	3. Each neutral encounters 0 or 1 ion during a mobility experiment.
+2. Collisions are instantaneous.
 3. Three-body collisions are rare.
-    1. Dense fluids are excluded from consideration
+    1. Dense fluids are excluded from consideration.
 4. Ions reach a terminal $$v_d=KE$$.
     1. Vacuum and  “low” pressures excluded from consideration.
-5. Ion-neutral reactions and clustering may be ignored
+5. Ion-neutral reactions and clustering may be ignored.
 
-
+### Key IMS Scaling Factor ($$E/N$$- Reduced Field Strength) ###
+$$E/N is known as the reduced field strength.
+Experimentally, $K$ is understood to be constant at low reduced field strengths ($$E/N<2$$.
+We shall now see why this parameter is useful by observing from this simulation the effect of varying the reduced field strength ($$E/N$$).
+First, we can consider the effect when ions are confined in a box in the presence of neutrals without the presence of an electric field.
 
 <video width="480" height="320" controls="controls">)
-  <source src="/animations/IMS_Theory/diffusion.mp4" type="video/mp4">)
-</video>)
+  <source src="/animations/IMS_Theory/NoEfield.mp4" type="video/mp4">)
+</video>
+
+The ions behave similarily to that of the neutral gasses.
+
+Now we demonstrate the effect when the electric field is constant and where voltage is decreasing in the direction from left to right.
+<video width="480" height="320" controls="controls">)
+  <source src="/animations/IMS_Theory/Efield1xN1x.mp4" type="video/mp4">)
+</video>
+
+
+
