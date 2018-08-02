@@ -2,14 +2,12 @@
 layout: post
 title: Introduction IMS Theory
 ---
-//http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/
-//http://dasonk.com/blog/2012/10/09/Using-Jekyll-and-Mathjax
 
-[comment]: <> (![_config.yml]({{ site.baseurl }}/images/config.png))
+[comment]: <> (http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/)
+[comment]: <> (http://dasonk.com/blog/2012/10/09/Using-Jekyll-and-Mathjax)
 ### IMS Theory Introduction
-1. Establish Variables
 
-Testing LaTeX $$a^2 + b^2 = c^2$$.
+Testing LaTeX here $$a^2 + b^2 = c^2$$.
 
 
 
