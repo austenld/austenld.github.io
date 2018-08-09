@@ -47,9 +47,9 @@ Ion Mobility ($$K$$)
 ==================
 
 The mobility $$(K)$$ of an ion swarm is important and related to the drift
-velocity of an ion. $$$$K=\frac{v_d}{E}$$$$ The central observation is that
-if an electric field $$(E)$$ is applied to ions dispersed in gas, the ions
-move with a characteristic average terminal velocity $$(v_d)$$ in the
+velocity of an ion where $$K=\frac{v_d}{E}$$. The central observation is
+that if an electric field $$(E)$$ is applied to ions dispersed in gas, the
+ions move with a characteristic average terminal velocity $$(v_d)$$ in the
 direction of the field. The mobility $$K$$ is defined as the ratio of the
 velocity to the field strength and is traditionally reported in units of
 cm$$^2$$V$$^{-1}$$sec$$^{-1}$$.
@@ -80,13 +80,28 @@ understood to be constant at low reduced field strengths. We shall now
 see why this parameter is useful by observing from this simulation the
 effect of varying the reduced field strength $$(E/N)$$.
 
-No Electric Field
------------------
+No Electric Field ($$E/N=0$$)
+---------------------------
 
 First, we can consider the effect when ions are confined in a box in the
-presence of neutrals without the presence of an electric field.
+presence of neutrals without the presence of an electric field. The red
+squares represent the ions and the blue dots correspond to the neutrals
+present. Without the presence of an electric field, the ions travel in a
+pattern of motion known as Brownian motion. The ions behave similarily
+to that of the neutral gasses.
 
 <video width="375" height="375" controls="controls">)
 	<source src="/animations/IMS_Theory/NoEfield2.mp4" type="video/mp4">)
+</video>
+
+Constant Electric Field (
+-------------------------
+
+Now the motion of the ions change when a constant electric field is
+applied. The voltage decreases linearly in the direction from left to
+right.
+
+<video width="375" height="375" controls="controls">)
+	<source src="/animations/IMS_Theory/Efield1xN1x.mp4" type="video/mp4">)
 </video>
 	
