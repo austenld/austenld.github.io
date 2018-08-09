@@ -122,10 +122,10 @@ Double Electric Field and Number Density
 The reduced field strength remains constant when the number density and
 electric field are doubled. The animation on the right highlights that
 the terminal velocity $$(v_d)$$ of the ion population is similar in the
-two animations.
+two simulations.
 
 <video width="750" height="375" controls="controls" align="center">)
-	<source src="/animations/IMS_Theory/Efield2xN2x.mp4" type="video/mp4">)
+	<source src="/animations/IMS_Theory/Combined.mp4" type="video/mp4">)
 </video>
 
 
