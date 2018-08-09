@@ -90,18 +90,18 @@ present. Without the presence of an electric field, the ions travel in a
 pattern of motion known as Brownian motion. The ions behave similarily
 to that of the neutral gasses.
 
-<video width="375" height="375" controls="controls">)
+<video width="750" height="750" controls="controls" align="center">)
 	<source src="/animations/IMS_Theory/NoEfield2.mp4" type="video/mp4">)
 </video>
 
-Constant Electric Field (
+Constant Electric Field
 -------------------------
 
 Now the motion of the ions change when a constant electric field is
 applied. The voltage decreases linearly in the direction from left to
 right.
 
-<video width="375" height="375" controls="controls">)
+<video width="750" height="750" controls="controls" align="center">)
 	<source src="/animations/IMS_Theory/Efield1xN1x.mp4" type="video/mp4">)
 </video>
 	
