@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction IMS Theory
+title: Reduced Field Strength $$(E/N)$$
 ---
 
 Experimentally, $$K$$ is understood to be constant at low reduced field
@@ -45,12 +45,12 @@ the terminal velocity $$(v_d)$$ of the ion population is similar to the
 animation in the left.
 
 
-<video width="375" height="375" align="center">)
-	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4" controls="controls">)
+<video width="375" height="375" align="center" controls="controls">)
+	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4">)
 </video>
 
 
 
-<video width="375" height="375" align="center">)
-	<source src="/animations/IMS_Theory/HighQuality_EN2.mp4" type="video/mp4" controls="controls">)
+<video width="375" height="375" align="center" controls="controls">)
+	<source src="/animations/IMS_Theory/HighQuality_EN2.mp4" type="video/mp4">)
 </video>
