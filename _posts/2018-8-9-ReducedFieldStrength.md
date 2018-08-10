@@ -9,7 +9,7 @@ of IMS. The second part examines the key scaling factor known as field
 strength and its relation to drift velocity.
 
 <video width="750" height="375" controls="controls">)
-	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4">)
+	<source src="/animations/IMS_Theory/E1N1.mp4" type="video/mp4">)
 </video>
 
 Electric Field $$(E)$$ and Number Density $$(N)$$
@@ -29,8 +29,9 @@ velocity of zero. The neutrals are dispersed in the confined box with
 random starting initial velocities and positions.
 
 <video width="750" height="375" controls="controls">)
-	<source src="/animations/IMS_Theory/E1N1.mp4" type="video/mp4">)
+	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4">)
 </video>
+
 
 In the animation above, the first and second column corresponds to a
 simulation in the presence of no electric field and applied constant
