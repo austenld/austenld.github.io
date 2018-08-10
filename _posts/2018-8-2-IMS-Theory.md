@@ -3,17 +3,14 @@ layout: post
 title: Introduction IMS Theory
 ---
 
-This is an introduction to the basics of ion mobility spectrometry
-(IMS). The purpose of this page is to introduce you to the concept of
-IMS and how ions behave in neutral gasses. The structure and content of
-this page is based upon lecture slides written by Dr. Bill Siems.
+Here we introduce the commonly referenced variables which will be
+discussed in further detail. These variables are grouped into three
+categories: instrument-state, mass, and measured quantities.
+
 
 Variables in IMS
 ================
 
-Here we introduce the commonly referenced variables which will be
-discussed in further detail. These variables are grouped into three
-categories: instrument-state, mass, and measured quantities.
 
 Instrument-State Variables: $$(L, V, E)$$ and $$(N, T, P)$$
 -------------------------------------------------------
