@@ -4,13 +4,13 @@ title: Introduction IMS Theory
 ---
 
 Here we introduce the commonly referenced variables which will be
-discussed in further detail. These variables are grouped into three
-categories: instrument-state, mass, and measured quantities.
-
+discussed in further detail.
 
 Variables in IMS
 ================
 
+The variables which will be introduced can be grouped into three
+distinct categories: instrument-state, mass, and measured quantities.
 
 Instrument-State Variables: $$(L, V, E)$$ and $$(N, T, P)$$
 -------------------------------------------------------
@@ -66,7 +66,3 @@ Five Underlying Assumptions of IMS
 
 5.  Ion-neutral reactions and clustering may be ignored (in real
     experiments clustering is common).
-
-
-
-	

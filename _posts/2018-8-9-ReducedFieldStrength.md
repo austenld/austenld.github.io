@@ -3,11 +3,12 @@ layout: post
 title: Reduced Field Strength
 ---
 
-Experimentally, $$K$$ is understood to be constant at low reduced field
-strengths. This post examines why this parameter is useful with
-simulations where reduced field strength $$(E/N)$$ is altered.
+Experimentally, mobility is understood to be constant at low reduced field
+strengths. This post examines why this field strength parameter is useful for 
+understanding how ions behave in neutral gasses under a constant electric field.
 
-Scaling Factor
+
+Scaling Factor $$(E/N)$$
 ======================================================
 
 $$E/N$$ is known as the reduced field strength.
