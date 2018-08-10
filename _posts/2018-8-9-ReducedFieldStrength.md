@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Reduced Field Strength $$(E/N)$$
+title: Reduced Field Strength
 ---
 
 Experimentally, $$K$$ is understood to be constant at low reduced field
 strengths. This post examines why this parameter is useful with
 simulations where reduced field strength $$(E/N)$$ is altered.
 
-Key IMS Scaling Factor ($$E/N$$- Reduced Field Strength)
+Scaling Factor
 ======================================================
 
 $$E/N$$ is known as the reduced field strength.
@@ -45,12 +45,12 @@ the terminal velocity $$(v_d)$$ of the ion population is similar to the
 animation in the left.
 
 
-<video width="375" height="375" align="center" controls="controls">)
+<video width="375" height="375" align="middle" controls="controls">)
 	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4">)
 </video>
 
 
 
-<video width="375" height="375" align="center" controls="controls">)
+<video width="375" height="375" align="middle" controls="controls">)
 	<source src="/animations/IMS_Theory/HighQuality_EN2.mp4" type="video/mp4">)
 </video>

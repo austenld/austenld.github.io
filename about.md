@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hello! My name is Austen Davis.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+This site is devoted to exploring the fundamentals of ion mobility spectrometry. I enjoy producing animations which aid in understanding the material.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[austenld@wsu.edu](mailto:austenld@wsu.edu)
