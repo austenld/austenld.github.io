@@ -19,9 +19,10 @@ import matplotlib.mlab as mlab
 #ffmpeg.rcParams['animation.ffmpeg_path'] = "C:\\FFmpeg"
 #10 seconds for 510 particles and 0.025 velocity (1 ion).
 #25 seconds for 750 particles and 0.025 velocity (1 ion).
-num_particles=1000       #500/20/0.0125 and 1000/20/0.025
-num_ions=20
-ion_velocity=0.0250    #0.05
+num_particles=2500      #2500/10/0.015/450~10secs and 5000/10/0.03/450~10secs
+num_ions=10
+ion_velocity=0.030    #0.015
+var_numframes=450
 
 class ParticleBox:
     """Orbits class
@@ -38,7 +39,7 @@ class ParticleBox:
                                [-0.5, 0.5, 0.5, 0.5],
                                [-0.5, -0.5, -0.5, 0.5]],
                  bounds = [-2, 2, -2, 2],
-                 size = 0.04,
+                 size = 0.01,
                  M = 0.05,
                  G =0):
         self.init_state = np.asarray(init_state, dtype=float)
@@ -112,38 +113,46 @@ class ParticleBox:
         # add gravity
         #self.state[:, 2] -= self.M * self.G * dt
         self.state[0:num_ions, 2] += ion_velocity
-		
-
-
+    
+        i=0
+        while i<num_ions:
+            if self.state[i, 0]>self.bounds[1]*0.99:
+                self.state[i, 0]=self.bounds[1]*0.999
+                self.state[i, 2:4]=0.0001
+            i+=1
 #------------------------------------------------------------
 # set up initial state
-np.random.seed(9)
+np.random.seed(22)
 init_state = np.random.random((num_particles, 4)) #change number of particles here.
-init_state[:, 0:2] *= 4.0
-init_state[:, 0:2] -= 2.0
+init_state[:, 0:2] *= 4
+init_state[:, 0:2] -= 2
 
 init_state[:, 2:4] -= 0.50
-init_state[0:num_ions,0]=0.0 	#First ion is not moving and centered.
-init_state[0:num_ions,2:4]*=0.1 	#First ion is not moving and centered.
+init_state[:, 2:4] *= 0.5
+
+init_state[0:num_ions,0]=0 	#First ion is not moving and centered.
+init_state[0:num_ions,2:4]*=0.001 	#First ion is not moving and centered.
 #init_state[0:num_ions,1:1]=-1.95 	#First ion is not moving and centered.
 #init_state[0:num_ions,1:4]=0.0	#First ion is not moving and centered.
 
-box = ParticleBox(init_state, size=0.04)
+box = ParticleBox(init_state, size=0.01)
 dt = 1. / 30 # 30fps
 
 
 #------------------------------------------------------------
 # set up figure and animation
 fig = plt.figure(figsize=(5, 5))
-grid = plt.GridSpec(5, 5, hspace=0.01, wspace=0.01)
-#fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-ax = fig.add_subplot(grid[-4:, :5], autoscale_on=False, xlim=(-2.00, 2.00), ylim=(-2, 2))
-                     #xlim=(-3.2, 3.2), ylim=(-2.4, 2.4))
+#grid = plt.GridSpec(5, 5, hspace=0.01, wspace=0.01)
+grid = plt.GridSpec(5, 5,hspace=0.0, wspace=0.0)
+#
+ax = fig.add_subplot(grid[-4:6, :5], autoscale_on=False, xlim=(-2.0, 2.0), ylim=(-2.0, 2.0))
+fig.subplots_adjust(left=0.005, right=0.99, bottom=0.005, top=0.99)
+ax.set_frame_on(False)
 # particles holds the locations of the particles
 ax.set_yticklabels([])
 ax.set_xticklabels([])
+particles, = ax.plot([], [], 'bo', ms=1)
 ion_particles, = ax.plot([], [], 'rD', ms=4)
-particles, = ax.plot([], [], 'bo', ms=4)
 # rect is the box edge
 rect = plt.Rectangle(box.bounds[::2],
                      box.bounds[1] - box.bounds[0],
@@ -152,42 +161,17 @@ rect = plt.Rectangle(box.bounds[::2],
 ax.add_patch(rect)
 #Add subplot
 #fig_hist = plt.figure()
-hist_ax = fig.add_subplot(grid[:-4, :5], autoscale_on=False,sharex=ax, ylim=(0.0, 20.0))
-
-var_numbins=12
-x_binning= np.linspace(-2.0, 2., num=var_numbins)
-x_plot_binning=np.linspace(-2., 2., num=var_numbins-1) #Number is 1 less
-bin_data,=hist_ax.plot([], [], 'r')
-
-plt.legend([ion_particles, particles], ["Ions", "Neutrals"],loc=1,prop={'size': 9})
-
-if ion_velocity<=0:
-    textstr1='Electric Field\n(Off)'
-elif ion_velocity<0.02:
-    textstr1='Electric Field\n(On) ---> = 1x'
-elif ion_velocity>=0.02:
-    textstr1='Electric Field\n(On) ---> = 2x'
-    
-if num_particles<=500:
-    textstr2='Number Density\n= 1x'
-elif num_particles>500:
-    textstr2='Number Density\n= 2x'
-
-    
-
-#ax.annotate("", xy=(0.9, 0.9), xytext=(0, 0), arrowprops=dict(arrowstyle="->"))
+hist_ax = fig.add_subplot(grid[-5:-4, :5], autoscale_on=False, xlim=(-2.0,2.0))
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-hist_ax.text(0.10, 1.22, textstr1, transform=ax.transAxes, fontsize=7, verticalalignment='top', bbox=props, horizontalalignment='center')
-hist_ax.text(0.12, 1.10, textstr2, transform=ax.transAxes, fontsize=7, verticalalignment='top', bbox=props,horizontalalignment='center')
+
 
 def init():
     #"""initialize animation"""
     global box, rect
     particles.set_data([], [])   
     ion_particles.set_data([], [])
-    bin_data.set_data([],[])
     rect.set_edgecolor('none')
-    return particles, rect, ion_particles, bin_data
+    return particles, rect, ion_particles
 
 def animate(i):
     """perform animation step"""
@@ -196,49 +180,42 @@ def animate(i):
 
     #ms = int(fig.dpi * 2 * box.size * fig.get_figwidth()
     #         / np.diff(ax.get_xbound())[0])
-    ms =4
     rect.set_edgecolor('k')	
     particles.set_data(box.state[num_ions:, 0], box.state[num_ions:, 1])
     ion_particles.set_data(box.state[0:num_ions, 0], box.state[0:num_ions, 1])
+
+
+
+
+    var_numbins=13
+    #if i>0:
+    hist_ax.cla()
+    for txt in ax.texts:
+        txt.set_visible(False)
+    for txt in hist_ax.texts:
+        txt.set_visible(False)
     
-    list_bin_data=[]
-    for j in range(len(x_binning)-1):
-        count=0
-        for k in range(num_ions):
-            if box.state[k, 0]>x_binning[j]:
-                if box.state[k, 0]<x_binning[j+1]:
-                    count+=1
-        list_bin_data.append(count)
-    bin_data.set_data(x_plot_binning, list_bin_data)
+
+    hist_ax.hist(box.state[0:num_ions, 0],var_numbins,range=(-2.0,2.0),fc='red',ec='black',align='mid')
+    #hist_ax.bar(x_plot_binning,list_bin_data,width=(0.35),color='r',align='edge')
+    hist_ax.set_yticks([])
+    hist_ax.set_xticks([])
+    hist_ax.set_xlim(-2.0, 2.0)
+    
+    
     
     textstr3='%.2f' % (float((i+1)/30.0))
     textstr3="Time: "+ textstr3+' s'
-    for txt in ax.texts:
-        txt.set_visible(False)
-    props = dict(boxstyle='round', facecolor='wheat', alpha=1)
-    textvar=ax.text(0.02, 0.95, textstr3, transform=ax.transAxes, fontsize=7, verticalalignment='top', bbox=props,horizontalalignment='left')
 
-    
-    #ax_hist.hist(box.state[0:num_ions, 0])
-    #fig_hist.remove()
-    #digitized = np.digitize(box.state[0:num_ions, 0], bins)
-    #bin_means = [box.state[0:num_ions, 0][digitized == i].mean() for i in range(1, len(bins))]
-    #ax_hist.hist(digitized)
-    
-    #plot.hist(ion_particles.set_data(box.state[0:num_ions, 0],density=1, bins=5) 
-   # plot.axis([-2, 2, 0, 20]) 
-    #particles.set_markersize(ms)
-    #ion_particles.set_markersize(ms)
+    props = dict(boxstyle='round', facecolor='white', alpha=0.75)
+    hist_ax.text(0.02, 1.1, textstr3, transform=ax.transAxes, fontsize=7, verticalalignment='top', bbox=props, horizontalalignment='left')
+    plt.legend([ion_particles, particles], ["Ions", "Neutrals"],loc=2,prop={'size': 8})
+    print(i)
+    #print (i)
     return particles, rect, ion_particles
 
 
-ani = animation.FuncAnimation(fig, animate, frames=360, interval=1, blit=True, init_func=init)
-# save the animation as an mp4.  This requires ffmpeg or mencoder to be
-# installed.  The extra_args ensure that the x264 codec is used, so that
-# the video can be embedded in html5.  You may need to adjust this for
-# your system: for more information, see
-# http://matplotlib.sourceforge.net/api/animation_api.html
-#mywriter = animation.FFMpegWriter()
-ani.save('diffusion.mp4', dpi=150,fps=30)
+ani = animation.FuncAnimation(fig, animate, frames=var_numframes, interval=1, blit=True, init_func=init)
+ani.save('diffusion.mp4', dpi=200,fps=30)
 plt.show()
 #plt.close(fig)
