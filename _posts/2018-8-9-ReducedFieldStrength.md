@@ -46,11 +46,11 @@ animation in the left.
 
 
 <video width="375" height="375" align="center">)
-	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4">)
+	<source src="/animations/IMS_Theory/HighQuality_EN1.mp4" type="video/mp4" controls="controls">)
 </video>
 
 
 
 <video width="375" height="375" align="center">)
-	<source src="/animations/IMS_Theory/HighQuality_EN2.mp4" type="video/mp4">)
+	<source src="/animations/IMS_Theory/HighQuality_EN2.mp4" type="video/mp4" controls="controls">)
 </video>

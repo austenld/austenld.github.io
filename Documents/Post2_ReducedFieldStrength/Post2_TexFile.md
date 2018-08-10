@@ -6,7 +6,7 @@ Experimentally, $K$ is understood to be constant at low reduced field
 strengths. This post examines why this parameter is useful with
 simulations where reduced field strength $(E/N)$ is altered.
 
-Key IMS Scaling Factor ($E/N$- Reduced Field Strength)
+Key IMS Scaling Factor ($E/N$)
 ======================================================
 
 $E/N$ is known as the reduced field strength.
