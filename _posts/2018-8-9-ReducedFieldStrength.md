@@ -3,8 +3,8 @@ layout: post
 title: Electric field and number density
 ---
 
-The first part demonstrates why the drift velocity of an ion population
-is dependent on the applied electric field and number density in context
+The first part of this post demonstrates why the drift velocity of an ion population
+depends on the applied electric field and number density in context
 of IMS. The second part examines the key scaling factor known as field
 strength and its relation to drift velocity.
 
@@ -34,7 +34,7 @@ random starting initial velocities and positions.
 
 
 In the animation above, the first and second column corresponds to a
-simulation in the presence of no electric field and applied constant
+simulation in the presence of no applied electric field and applied constant
 electric field (the direction of the field is from left to right )
 respectively. Similarly, the first row corresponds to where the number
 density is effectively reduced to zero (mimicking high vacuum
